@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Domain", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Application", "src\TG.ECommerce.Application\TG.ECommerce.Application.csproj", "{2032656C-E09B-47DC-A56A-3C67D3777FC8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CC2F32CE-82FE-4846-99AC-6B83F0899D37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Infrastructure.EFCore", "src\Infrastructure\TG.ECommerce.Infrastructure.EFCore\TG.ECommerce.Infrastructure.EFCore.csproj", "{47500095-5016-4851-8FC4-B69446DBE3E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{2032656C-E09B-47DC-A56A-3C67D3777FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2032656C-E09B-47DC-A56A-3C67D3777FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2032656C-E09B-47DC-A56A-3C67D3777FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47500095-5016-4851-8FC4-B69446DBE3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47500095-5016-4851-8FC4-B69446DBE3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47500095-5016-4851-8FC4-B69446DBE3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47500095-5016-4851-8FC4-B69446DBE3E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,8 @@ Global
 		{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 		{2032656C-E09B-47DC-A56A-3C67D3777FC8} = {24B822BA-6864-4E09-9167-9D95791DEF59}
+		{CC2F32CE-82FE-4846-99AC-6B83F0899D37} = {24B822BA-6864-4E09-9167-9D95791DEF59}
+		{47500095-5016-4851-8FC4-B69446DBE3E7} = {CC2F32CE-82FE-4846-99AC-6B83F0899D37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2AA52D6-C738-4936-8173-E6F3F5B2D61C}
