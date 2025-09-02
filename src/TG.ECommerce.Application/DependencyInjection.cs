@@ -15,6 +15,7 @@ namespace TG.ECommerce.Application
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
 
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionPipelineBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehaviour<,>));
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
