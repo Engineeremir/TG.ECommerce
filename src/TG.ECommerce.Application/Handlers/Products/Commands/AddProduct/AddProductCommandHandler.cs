@@ -3,6 +3,7 @@ using TG.ECommerce.Application.Specifications.Categories;
 using TG.ECommerce.Domain.AggregateModels.CategoryAggregate;
 using TG.ECommerce.Domain.AggregateModels.ProductAggregate;
 using TG.ECommerce.Shared.Models;
+using TG.ECommerce.Shared.SeedWork;
 
 namespace TG.ECommerce.Application.Handlers.Products.Commands.AddProduct;
 
@@ -15,7 +16,7 @@ public class AddProductCommandHandler(ICategoryRepository categoryRepository) : 
 
         if (category == null)
         {
-            throw new Exception("not found"); //TODO Error Handling
+            throw new ApplicationGeneralException("category not found");
         }
 
         var product = new Product(request.Name, request.Price, request.Stock, request.CategoryId);

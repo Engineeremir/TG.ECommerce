@@ -1,4 +1,5 @@
-﻿using TG.ECommerce.API.Services;
+﻿using TG.ECommerce.API.SeedWork.ExceptionHandling;
+using TG.ECommerce.API.Services;
 using TG.ECommerce.Application;
 using TG.ECommerce.Infrastructure.EFCore;
 
@@ -27,10 +28,20 @@ builder.Services.AddInfrastructureEfCore(builder.Configuration);
 builder.Services.AddApplication();
 #endregion
 
+
+#region Problem Details
+builder.Services.AddExceptionHandler<ApplicationExceptionHandler>();
+builder.Services.AddExceptionHandler<DomainExceptionHandler>();
+builder.Services.AddExceptionHandler<FluentValidationExceptionHandler>();
+builder.Services.AddExceptionHandler<GlobalExceptionHandnler>();
+builder.Services.AddProblemDetails();
+#endregion
+
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+app.UseExceptionHandler();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
