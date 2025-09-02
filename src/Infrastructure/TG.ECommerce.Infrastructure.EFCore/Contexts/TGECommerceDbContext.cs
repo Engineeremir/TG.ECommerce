@@ -31,6 +31,11 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.EnableDetailedErrors();
+        }
+
         optionsBuilder.EnableSensitiveDataLogging();
         base.OnConfiguring(optionsBuilder);
     }
