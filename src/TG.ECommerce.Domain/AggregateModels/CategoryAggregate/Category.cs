@@ -15,7 +15,7 @@ public class Category : Entity
         Id = Guid.NewGuid();
         Name = name;
 
-        CreatedOn = DateTime.Now;
+        CreatedOn = DateTime.UtcNow;
     }
 
     public void AddProduct(Product product)

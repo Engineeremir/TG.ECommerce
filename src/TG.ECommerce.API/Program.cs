@@ -3,6 +3,9 @@ using TG.ECommerce.API.Services;
 using TG.ECommerce.Application;
 using TG.ECommerce.Infrastructure.EFCore;
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+AppContext.SetSwitch("Npgsql.EnableDiscardEvents", false);
+
 var builder = WebApplication.CreateBuilder(args);
 
 #region Application settings

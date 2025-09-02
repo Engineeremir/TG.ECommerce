@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TG.ECommerce.Domain.AggregateModels.CategoryAggregate;
 using TG.ECommerce.Domain.AggregateModels.ProductAggregate;
 using TG.ECommerce.Infrastructure.EFCore.Contexts;
+using TG.ECommerce.Infrastructure.EFCore.DbSeeder;
 using TG.ECommerce.Infrastructure.EFCore.Repositories;
 using TG.ECommerce.Shared.Utils;
 
@@ -21,6 +22,8 @@ public static class DependencyInjection
         var serviceProvider = services.BuildServiceProvider();
         var db = serviceProvider.GetRequiredService<TGECommerceDbContext>();
         db.Database.Migrate();
+        
+        SeedDatabase(db);
 
         return services;
     }
@@ -32,5 +35,15 @@ public static class DependencyInjection
         services.AddScoped(typeof(EfRepository<>));
 
         return services;
+    }
+
+    private static void SeedDatabase(TGECommerceDbContext context)
+    {
+        if (!context.Categories.Any() && !context.Products.Any())
+        {
+            var categoriesWithProducts = SeedData.GetCategoriesWithProducts();
+            context.Categories.AddRange(categoriesWithProducts);
+            context.SaveChanges();
+        }
     }
 }
