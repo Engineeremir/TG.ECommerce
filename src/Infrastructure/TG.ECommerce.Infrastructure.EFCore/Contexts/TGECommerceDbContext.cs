@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using TG.ECommerce.Infrastructure.EFCore.Extensions;
 using TG.ECommerce.Shared.SeedWork.Repository;
 
 namespace TG.ECommerce.Infrastructure.EFCore.Contexts;
@@ -45,7 +46,7 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
 
         if (result > 0)
         {
-            //dispatch domain events
+            await _mediator.DispatchDomainEventsAsync(this);
         }
 
         return true;
