@@ -6,7 +6,7 @@ namespace TG.ECommerce.Domain.AggregateModels.CategoryAggregate;
 public class Category : Entity
 {
     public string Name { get; private set; }
-    public ICollection<Product> Products { get; private set; }
+    public ICollection<Product> Products { get; private set; } = new List<Product>();
 
     protected Category() {}
 
@@ -16,5 +16,10 @@ public class Category : Entity
         Name = name;
 
         CreatedOn = DateTime.Now;
+    }
+
+    public void AddProduct(Product product)
+    {
+        Products.Add(product);
     }
 }

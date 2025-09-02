@@ -11,4 +11,10 @@
     <ProjectReference Include="..\TG.ECommerce.Shared\TG.ECommerce.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Handlers\Categories\Commands\" />
+    <Folder Include="Handlers\Categories\Queries\" />
+    <Folder Include="Handlers\Products\Queries\" />
+  </ItemGroup>
+
 </Project>

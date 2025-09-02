@@ -1,4 +1,5 @@
 ﻿using TG.ECommerce.API.Services;
+using TG.ECommerce.Application;
 using TG.ECommerce.Infrastructure.EFCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 #region Add Layers
 builder.Services.AddInfrastructureEfCore(builder.Configuration);
+builder.Services.AddApplication();
 #endregion
 
 builder.Services.AddSwaggerGen();
