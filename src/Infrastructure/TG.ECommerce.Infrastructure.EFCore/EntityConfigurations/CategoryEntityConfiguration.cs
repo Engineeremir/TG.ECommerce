@@ -12,7 +12,8 @@ namespace TG.ECommerce.Infrastructure.EFCore.EntityConfigurations
             builder.HasKey(t => t.Id);
             builder.Property(b => b.Id).HasColumnType("UUID").ValueGeneratedNever().IsRequired();
 
-            builder.Property(b => b.Name).HasMaxLength(200);
+            builder.Property(c => c.Name).IsRequired().HasMaxLength(200);
+            builder.HasIndex(c => c.Name).IsUnique().HasDatabaseName("IX_Categories_Name_Unique");
             builder.Property(x => x.CreatedOn).IsRequired();
         }
     }

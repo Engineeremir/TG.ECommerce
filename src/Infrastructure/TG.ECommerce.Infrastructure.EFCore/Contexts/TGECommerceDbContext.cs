@@ -15,10 +15,6 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
     private readonly IMediator _mediator = null!;
     private readonly IConfiguration _configuration = null!;
 
-    public TGECommerceDbContext()
-    {
-    }
-
     public TGECommerceDbContext(DbContextOptions<TGECommerceDbContext> options) : base(options)
     {
     }
