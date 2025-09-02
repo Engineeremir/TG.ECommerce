@@ -1,19 +1,18 @@
-using TG.ECommerce.API.Extensions;
-using TG.ECommerce.API.Services;
+﻿using TG.ECommerce.API.Services;
 using TG.ECommerce.Infrastructure.EFCore;
-using TG.ECommerce.Shared.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 #region Application settings
 builder.Configuration
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-builder.Services.AddSingleton<VaultService>();
+var vaultService = new VaultService(builder.Configuration);
+vaultService.SetSecrets();
 
-// Settings'leri Vault'tan Configure et
-builder.Services.ConfigureFromVault<DatabaseSettings>(builder.Configuration, "DatabaseSettings");
+builder.Configuration
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: false, reloadOnChange: true);
+
 #endregion
 
 // Add services to the container.
@@ -23,7 +22,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 #region Add Layers
-builder.Services.AddInfrastructureEfCore();
+builder.Services.AddInfrastructureEfCore(builder.Configuration);
 #endregion
 
 builder.Services.AddSwaggerGen();

@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using TG.ECommerce.Infrastructure.EFCore.Extensions;
 using TG.ECommerce.Shared.SeedWork.Repository;
+using TG.ECommerce.Shared.Utils;
 
 namespace TG.ECommerce.Infrastructure.EFCore.Contexts;
 
@@ -9,6 +11,7 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
 {
     public const string DefaultSchema = "public";
     private readonly IMediator _mediator = null!;
+    private readonly IConfiguration _configuration = null!;
 
     public TGECommerceDbContext()
     {
@@ -22,9 +25,10 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
         AppContext.SetSwitch("Npgsql.EnableDiscardEvents", false);
     }
 
-    public TGECommerceDbContext(DbContextOptions<TGECommerceDbContext> options, IMediator mediator) : base(options)
+    public TGECommerceDbContext(DbContextOptions<TGECommerceDbContext> options, IMediator mediator, IConfiguration configuration) : base(options)
     {
         _mediator = mediator;
+        _configuration = configuration;
         AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehaviour", true);
         AppContext.SetSwitch("Npgsql.EnableDiscardEvents", false);
     }
@@ -33,6 +37,7 @@ public class TGECommerceDbContext : DbContext, IUnitOfWork
     {
         if (!optionsBuilder.IsConfigured)
         {
+            _configuration.GetSecretValue<string>("DatabaseSettings", "ProductDatabase");
             optionsBuilder.EnableDetailedErrors();
         }
 
