@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Infrastructure.EFCore", "src\Infrastructure\TG.ECommerce.Infrastructure.EFCore\TG.ECommerce.Infrastructure.EFCore.csproj", "{47500095-5016-4851-8FC4-B69446DBE3E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.API", "src\TG.ECommerce.API\TG.ECommerce.API.csproj", "{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{47500095-5016-4851-8FC4-B69446DBE3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47500095-5016-4851-8FC4-B69446DBE3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47500095-5016-4851-8FC4-B69446DBE3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{2032656C-E09B-47DC-A56A-3C67D3777FC8} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 		{CC2F32CE-82FE-4846-99AC-6B83F0899D37} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 		{47500095-5016-4851-8FC4-B69446DBE3E7} = {CC2F32CE-82FE-4846-99AC-6B83F0899D37}
+		{DAB6731F-D0B3-4660-9CAE-BE7F20BEE072} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2AA52D6-C738-4936-8173-E6F3F5B2D61C}
