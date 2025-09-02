@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{24B822BA-686
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Shared", "src\TG.ECommerce.Shared\TG.ECommerce.Shared.csproj", "{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TG.ECommerce.Domain", "src\TG.ECommerce.Domain\TG.ECommerce.Domain.csproj", "{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{934DB1D8-F9D5-4EB9-9D10-4EADFED1E7A9} = {24B822BA-6864-4E09-9167-9D95791DEF59}
+		{2CACA2B8-07AF-4E3F-961A-6F0019EAD5C7} = {24B822BA-6864-4E09-9167-9D95791DEF59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2AA52D6-C738-4936-8173-E6F3F5B2D61C}
