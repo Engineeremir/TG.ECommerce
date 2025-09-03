@@ -22,4 +22,16 @@ public class Category : Entity
     {
         Products.Add(product);
     }
+
+    public void Update(string name)
+    {
+        Name = name;
+
+        UpdatedOn = DateTime.UtcNow;
+    }
+
+    public void Delete()
+    {
+        DeletedOn = DateTime.UtcNow;
+    }
 }

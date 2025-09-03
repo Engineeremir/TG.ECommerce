@@ -14,6 +14,8 @@ namespace TG.ECommerce.Infrastructure.EFCore.EntityConfigurations
 
             builder.Property(b => b.Name).HasMaxLength(200);
             builder.Property(x => x.CreatedOn).IsRequired();
+
+            builder.HasQueryFilter(qf => qf.DeletedOn == null);
         }
     }
 }

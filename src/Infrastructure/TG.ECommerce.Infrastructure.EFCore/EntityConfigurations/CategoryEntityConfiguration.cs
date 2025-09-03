@@ -15,6 +15,8 @@ namespace TG.ECommerce.Infrastructure.EFCore.EntityConfigurations
             builder.Property(c => c.Name).IsRequired().HasMaxLength(200);
             builder.HasIndex(c => c.Name).IsUnique().HasDatabaseName("IX_Categories_Name_Unique");
             builder.Property(x => x.CreatedOn).IsRequired();
+
+            builder.HasQueryFilter(qf => qf.DeletedOn == null);
         }
     }
 }
