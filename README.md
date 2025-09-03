@@ -23,10 +23,11 @@ git clone https://github.com/Engineeremir/TG.ECommerce
 
 ### Step 2: Start Core Services
 
-Navigate to the `TG.ECommerce.System` directory and start the database and vault services:
+Navigate to the `TG.ECommerce.System` directory and create the required network, then start the database and vault services:
 
 ```bash
 cd TG.ECommerce.System
+docker network create tg-shared-network
 docker-compose up -d tg.shared.database tg.shared.vault
 ```
 
