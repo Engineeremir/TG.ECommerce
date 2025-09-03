@@ -95,10 +95,10 @@ Navigate to `http://localhost:8080/swagger/index.html` to explore and test the A
 This project follows **Clean Architecture** and **Domain-Driven Design (DDD)** principles with the following layer structure:
 
 - **Domain**: Core business entities and domain logic
-- **Application**: Application services, CQRS handlers, and business workflows
+- **Application**: Application services,Cross-cutting concerns, CQRS handlers and business workflows
 - **Infrastructure.EFCore**: Data access layer with Entity Framework Core
 - **API**: RESTful API controllers and presentation layer
-- **SharedLayer**: Common utilities and cross-cutting concerns
+- **SharedLayer**: Common utilities
 
 ### Design Patterns Used
 
@@ -123,13 +123,13 @@ This project follows **Clean Architecture** and **Domain-Driven Design (DDD)** p
 The API provides the following functionality:
 
 ### Categories
-- **POST** `/api/categories` - Create a new category
-- **PUT** `/api/categories/{id}` - Update an existing category
+- **POST** `/api/categories/add-category` - Create a new category
+- **PUT** `/api/categories/update-category` - Update an existing category
 - **DELETE** `/api/categories/{id}` - Delete a category
 
 ### Products
-- **POST** `/api/products` - Create a new product
-- **GET** `/api/products` - List products with pagination and filtering
+- **POST** `/api/products/add-product` - Create a new product
+- **POST** `/api/products/get-list` - List products with pagination and filtering
 
 All list endpoints support:
 - **Pagination**: Page-based navigation
